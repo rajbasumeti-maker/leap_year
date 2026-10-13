@@ -1,9 +1,12 @@
 def leapYear(year):
-    if(year % 4 == 0):
-        print("Leap year")
+    if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+        return "Leap year"
     else:
-        print("Not a leap year")
+        return "Not a leap year"
 
 if __name__ == "__main__":
-    year = int(input("Enter a year: "))
-    leapYear(year)
+    try:
+        year = int(input("Enter a year: "))
+        print(leapYear(year))
+    except EOFError:
+        pass
